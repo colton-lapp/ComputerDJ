@@ -331,12 +331,16 @@ def main():
     print("\n\nloading....")
     time.sleep(1)
     
-    client_id = '2d2b3cb73d234437a56c79a7e0fcae76'
-    client_secret = '8c2eb7b9be2c4b3c9f0c276bfb0db997'
+
+    
     rips_archived_id = 'spotify:playlist:4Ra7m4IDwu9GVMq7FC51Kj'
     mp3_dir = '/Users/coltonlapp/Dropbox/Personal/Music/DJ/MP3s/Spotify/'
     comp_dj_dir = '/Users/coltonlapp/Dropbox/Personal/Music/DJ/SCRIPTS/ComputerDJ/'
-    
+
+    # Read in client_id and client_secret
+    with open(comp_dj_dir + "credentials.txt", "r") as file:
+        exec(file.read())
+        
     # Authenticate with Spotify API
     client_credentials_manager = SpotifyClientCredentials(client_id=client_id, client_secret=client_secret)
     sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
