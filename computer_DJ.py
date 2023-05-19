@@ -337,10 +337,16 @@ def main():
     mp3_dir = '/Users/coltonlapp/Dropbox/Personal/Music/DJ/MP3s/Spotify/'
     comp_dj_dir = '/Users/coltonlapp/Dropbox/Personal/Music/DJ/SCRIPTS/ComputerDJ/'
 
-    # Read in client_id and client_secret
-    with open(comp_dj_dir + "credentials.txt", "r") as file:
-        exec(file.read())
-        
+    client_id= 'temp'
+    client_secret = 'temp'
+    
+    with open( comp_dj_dir + "credentials.txt", "r") as file:
+        credentials = file.readlines()
+    
+    # Extract the values and assign them to variables
+    client_id = credentials[0].strip().split('=')[1].strip().strip("'")
+    client_secret = credentials[1].strip().split('=')[1].strip().strip("'")
+
     # Authenticate with Spotify API
     client_credentials_manager = SpotifyClientCredentials(client_id=client_id, client_secret=client_secret)
     sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
