@@ -1,6 +1,9 @@
 ## Computer DJ
 #### An automated way to transition between songs using Spotify's song metadata (tempo, energy, key, year, genre, etc...)
 
+## Demo Link:
+https://youtu.be/kguTqimvcOg
+
 ## Description:
 This was a personal project I completed in the summer of 2023. My goal was to use basic ML/stats techniques to compute the similarity between songs and then automatically transition between ones that were the most similar. 
 As an amateur bedroom DJ, I have a lot of mp3 files saved on my computer spanning a wide range of genres. I also have lengthy sptofiy playlists that contain thousands of songs. I wanted to have a program that mimicked the intuition of DJs for both of these mediums of song collections so that I could enjoy my disorganized collection of music more.
